@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Client</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+    <div class="form">
+        <div class="groupGroup">
+            <div class="inputGroup">
+                <input type="text" id="ip" placeholder=" " required value="127.0.0.1">
+                <label for="ip">ip</label>
+            </div>
+            <div class="inputGroup">
+                <input type="number" id="num" placeholder=" " required value="15">
+                <label for="num">初始值</label>
+            </div>
+        </div>
+        <button id="connectingBtn">連線</button>
+    </div>
+    <div id="container"></div>
+    <script src="./writeMsg.js"></script>
+    <script>
+        const ip = document.getElementById('ip');
+        const num = document.getElementById('num');
+        const connectingBtn = document.getElementById('connectingBtn');
+
+        connectingBtn.addEventListener('click', () => {
+            connectingBtn.disabled = true;
+            eel.main(ip.value, parseInt(num.value));
+        });
+
+        eel.expose(connectEnd);
+        function connectEnd() {
+            connectingBtn.disabled = false;
+        }
+    </script>
+</body>
+
+</html>

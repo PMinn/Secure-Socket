@@ -1,0 +1,108 @@
+.form {
+    width: 100vw;
+    height: 100px;
+    background: rgb(105, 88, 254);
+    background: linear-gradient(38deg, rgba(105, 88, 254, 1) 0%, rgba(176, 108, 255, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputGroup {
+    width: 80vw;
+    position: relative;
+    margin: 2vh auto;
+}
+
+input {
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 0;
+    width: 70vw;
+    padding: 0 2vw;
+    margin: 0 auto;
+    outline: 0;
+}
+
+label {
+    position: absolute;
+    left: 2vw;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+    color: rgb(146, 146, 146);
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+input:focus~label,
+input:not(:placeholder-shown)~label {
+    opacity: 0;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#container {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    overflow: auto;
+}
+
+#container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+}
+
+#container::-webkit-scrollbar-thumb {
+    background: rgb(143, 143, 143);
+    border-radius: 13px;
+}
+
+.li {
+    padding: 13px 0;
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 1px #cecece solid;
+}
+
+.li .code {
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 5.5rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 10px;
+    border: 2px solid;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5vw;
+}
+
+.li .code.recv {
+    color: #65C000;
+    border-color: #65C000;
+}
+
+.li .code.set {
+    color: #5a2900;
+    border-color: #5a2900;
+}
+
+.li .code.timeout {
+    color: #FF5719;
+    border-color: #FF5719;
+}
+
+.li .code.send {
+    color: #007fd4;
+    border-color: #007fd4;
+}
